@@ -1,0 +1,20 @@
+{
+    "name": "mrt1m/playstation-store-api",
+    "description": "",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "mrt1m",
+            "email": "mrt1m@ya.ru"
+        }
+    ],
+    "require": {
+        "php": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "PlaystationStoreApi\\": "src/"
+        }
+    }
+}
