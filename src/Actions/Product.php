@@ -3,25 +3,24 @@ declare(strict_types=1);
 
 namespace PlaystationStoreApi\Actions;
 
-use PlaystationStoreApi\Request;
+use GuzzleHttp\Psr7\Request;
+use PlaystationStoreApi\ApiClients\Chihiro;
+use Psr\Http\Client\ClientExceptionInterface;
 
 class Product
 {
-    protected Request $request;
+    protected Chihiro $chihiroApiCLient;
 
-    public function __construct(Request $request)
+    public function __construct(Chihiro $chihiroApiCLient)
     {
-        $this->request = $request;
+        $this->chihiroApiCLient = $chihiroApiCLient;
     }
 
     /**
-     * @param string $productId
-     *
-     * @return string
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws ClientExceptionInterface
      */
     public function get(string $productId) : string
     {
-        return $this->request->get($productId);
+        return $this->chihiroApiCLient->get(new Request('GET', '/' . $productId));
     }
 }

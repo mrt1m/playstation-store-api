@@ -5,7 +5,7 @@ namespace PlaystationStoreApi\Enum;
 
 use MyCLabs\Enum\Enum;
 
-class Regions extends Enum
+class Region extends Enum
 {
     public const ARGENTINA = "es-ar";
     public const AUSTRALIA = "en-au";
