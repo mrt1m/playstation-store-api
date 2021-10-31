@@ -6,7 +6,7 @@
 
 ## 2. Installation
 
-The VK PHP SDK can be installed using Composer by running the following command:
+The playstation-store-api can be installed using Composer by running the following command:
 
 ```sh
 composer require mrt1m/playstation-store-api
