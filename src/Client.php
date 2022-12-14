@@ -13,21 +13,21 @@ use Psr\Http\Client\ClientInterface;
 class Client
 {
     protected Chihiro $chihiroApiCLient;
+
     protected GraphQL $graphQLApiClient;
 
     public function __construct(Region $region, ClientInterface $client)
     {
-
         $this->chihiroApiCLient = new Chihiro($region, $client);
         $this->graphQLApiClient = new GraphQL($region, $client);
     }
 
-    public function product() : Product
+    public function product(): Product
     {
         return new Product($this->chihiroApiCLient);
     }
 
-    public function catalog() : Catalog
+    public function catalog(): Catalog
     {
         return new Catalog($this->graphQLApiClient);
     }

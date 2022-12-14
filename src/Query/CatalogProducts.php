@@ -7,11 +7,14 @@ use PlaystationStoreApi\Enum\Category;
 use PlaystationStoreApi\ValueObject\Pagination;
 use PlaystationStoreApi\ValueObject\Sorting;
 
-class CatalogProducts
+final class CatalogProducts
 {
     protected string $categoryId;
+
     protected string $sha256Hash;
+
     protected Pagination $pagination;
+
     protected Sorting $sorting;
 
     public function __construct(Category $category, string $sha256Hash)
@@ -22,34 +25,44 @@ class CatalogProducts
         $this->sorting = new Sorting('productReleaseDate');
     }
 
-    public function categoryId() : mixed
+    public function categoryId(): string
     {
         return $this->categoryId;
     }
 
-    public function sha256Hash() : string
+    public function setCategoryId(string $categoryId): self
+    {
+        $this->categoryId = $categoryId;
+
+        return $this;
+    }
+
+    public function sha256Hash(): string
     {
         return $this->sha256Hash;
     }
 
-    public function pagination() : Pagination
+    public function pagination(): Pagination
     {
         return $this->pagination;
     }
 
-    public function setPagination(Pagination $pagination) : void
+    public function setPagination(Pagination $pagination): self
     {
         $this->pagination = $pagination;
+
+        return $this;
     }
 
-    public function sorting() : Sorting
+    public function sorting(): Sorting
     {
         return $this->sorting;
     }
 
-    public function setSorting(Sorting $sorting) : self
+    public function setSorting(Sorting $sorting): self
     {
         $this->sorting = $sorting;
+
         return $this;
     }
 }

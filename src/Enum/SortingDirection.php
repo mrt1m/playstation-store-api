@@ -5,8 +5,9 @@ namespace PlaystationStoreApi\Enum;
 
 use MyCLabs\Enum\Enum;
 
-class SortingDirection extends Enum
+final class SortingDirection extends Enum
 {
     public const ASC = true;
+
     public const DESC = false;
 }

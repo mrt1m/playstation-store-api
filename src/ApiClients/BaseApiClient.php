@@ -8,14 +8,20 @@ use PlaystationStoreApi\Enum\Region;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\UriInterface;
+use UnexpectedValueException;
 
 abstract class BaseApiClient
 {
     protected ClientInterface $client;
+
     protected string $region;
+
     protected string $language;
+
     protected UriInterface $uri;
+
     protected array $headers = [];
+
     protected Uri $basePath;
 
     public function __construct(Region $region, ClientInterface $client)
@@ -27,17 +33,17 @@ abstract class BaseApiClient
         $this->basePath = new Uri();
     }
 
-    protected function parseRegion(Region $region) : void
+    protected function parseRegion(Region $region): void
     {
         if ($result = explode('-', $region->getValue())) {
-            $this->region = array_pop($result);
-            $this->language = implode('-', $result);
+            $this->language = current($result);
+            $this->region = end($result);
         } else {
-            throw new \UnexpectedValueException('The value [' . $region->getValue() . '] is not valid');
+            throw new UnexpectedValueException('The value [' . $region->getValue() . '] is not valid');
         }
     }
 
-    protected function mergeBasePath(UriInterface $uri) : UriInterface
+    protected function mergeBasePath(UriInterface $uri): UriInterface
     {
         return $uri
             ->withScheme($this->basePath->getScheme())
@@ -45,5 +51,5 @@ abstract class BaseApiClient
             ->withPath($this->basePath->getPath() . $uri->getPath());
     }
 
-    abstract public function get(RequestInterface $request) : string;
+    abstract public function get(RequestInterface $request): string;
 }

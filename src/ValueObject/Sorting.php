@@ -5,25 +5,26 @@ namespace PlaystationStoreApi\ValueObject;
 
 use PlaystationStoreApi\Enum\SortingDirection;
 
-class Sorting
+final class Sorting
 {
     protected string $fieldName;
-    protected bool $isAscending;
+
+    protected SortingDirection $sortingDirection;
 
     public function __construct(string $fieldName, SortingDirection $sortingDirection = null)
     {
         $this->fieldName = $fieldName;
-        $this->isAscending = (isset($sortingDirection) ? $sortingDirection->getValue() : SortingDirection::DESC) === true;
+        $this->sortingDirection = $sortingDirection ?? new SortingDirection(SortingDirection::DESC);
     }
 
-    public function fieldName() : string
+    public function fieldName(): string
     {
         return $this->fieldName;
     }
 
-    public function isAscending() : bool
+    public function isAscending(): bool
     {
-        return $this->isAscending;
+        return $this->sortingDirection->getValue() === SortingDirection::ASC;
     }
 
 }

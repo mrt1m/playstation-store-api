@@ -1,22 +1,23 @@
 {
-    "name": "mrt1m/playstation-store-api",
-    "description": "",
-    "type": "library",
-    "license": "Apache-2.0",
-    "authors": [
-        {
-            "name": "mrt1m",
-            "email": "mrt1m@ya.ru"
-        }
-    ],
-    "require": {
-        "php": ">=7.4",
-        "myclabs/php-enum": "1.8.0",
-        "guzzlehttp/guzzle": "7.3.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "PlaystationStoreApi\\": "src/"
-        }
+  "name": "mrt1m/playstation-store-api",
+  "description": "",
+  "type": "library",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "mrt1m",
+      "email": "mrt1m@ya.ru"
     }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "myclabs/php-enum": "1.8.0",
+    "guzzlehttp/guzzle": "7.3.0",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "PlaystationStoreApi\\": "src/"
+    }
+  }
 }

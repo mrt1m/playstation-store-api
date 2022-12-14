@@ -9,19 +9,24 @@ use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 
-class Chihiro extends BaseApiClient
+final class Chihiro extends BaseApiClient
 {
     public function __construct(Region $region, ClientInterface $client)
     {
         parent::__construct($region, $client);
 
-        $this->basePath = new Uri('https://store.playstation.com/store/api/chihiro/00_09_000/container/' . strtoupper($this->region) . '/' . $this->language . '/999/');
+        $this->basePath = new Uri(
+            'https://store.playstation.com/store/api/chihiro/00_09_000/container/'
+            . strtolower($this->region)
+            . '/' . strtolower($this->language)
+            . '/999/'
+        );
     }
 
     /**
      * @throws ClientExceptionInterface
      */
-    public function get(RequestInterface $request) : string
+    public function get(RequestInterface $request): string
     {
         $response = $this->client->sendRequest(
             $request->withUri($this->mergeBasePath($request->getUri()))

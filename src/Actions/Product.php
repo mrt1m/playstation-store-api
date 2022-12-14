@@ -7,7 +7,7 @@ use GuzzleHttp\Psr7\Request;
 use PlaystationStoreApi\ApiClients\Chihiro;
 use Psr\Http\Client\ClientExceptionInterface;
 
-class Product
+final class Product
 {
     protected Chihiro $chihiroApiCLient;
 
@@ -19,7 +19,7 @@ class Product
     /**
      * @throws ClientExceptionInterface
      */
-    public function get(string $productId) : string
+    public function get(string $productId): string
     {
         return $this->chihiroApiCLient->get(new Request('GET', '/' . $productId));
     }

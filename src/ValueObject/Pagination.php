@@ -3,9 +3,10 @@ declare(strict_types=1);
 
 namespace PlaystationStoreApi\ValueObject;
 
-class Pagination
+final class Pagination
 {
     protected int $size;
+
     protected int $offset;
 
     public function __construct(int $size, int $offset = 0)
@@ -14,12 +15,12 @@ class Pagination
         $this->offset = $offset;
     }
 
-    public function size() : int
+    public function size(): int
     {
         return $this->size;
     }
 
-    public function offset() : int
+    public function offset(): int
     {
         return $this->offset;
     }

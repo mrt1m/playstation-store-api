@@ -9,7 +9,7 @@ use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 
-class GraphQL extends BaseApiClient
+final class GraphQL extends BaseApiClient
 {
 
     public function __construct(Region $region, ClientInterface $client)
@@ -22,12 +22,12 @@ class GraphQL extends BaseApiClient
     /**
      * @throws ClientExceptionInterface
      */
-    public function get(RequestInterface $request) : string
+    public function get(RequestInterface $request): string
     {
         $response = $this->client->sendRequest(
             $request
                 ->withUri($this->mergeBasePath($request->getUri()))
-                ->withAddedHeader('x-psn-store-locale-override', $this->region . '-' . strtoupper($this->language))
+                ->withAddedHeader('x-psn-store-locale-override', $this->language . '-' . strtoupper($this->region))
         );
 
         return $response->getBody()->getContents();

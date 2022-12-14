@@ -6,8 +6,10 @@ namespace PlaystationStoreApi\Actions;
 use GuzzleHttp\Psr7\Request;
 use PlaystationStoreApi\ApiClients\GraphQL;
 use PlaystationStoreApi\Query\CatalogProducts;
+use Psr\Http\Client\ClientExceptionInterface;
+use JsonException;
 
-class Catalog
+final class Catalog
 {
     protected GraphQL $graphQLApiClient;
 
@@ -17,8 +19,8 @@ class Catalog
     }
 
     /**
-     * @throws \Psr\Http\Client\ClientExceptionInterface
-     * @throws \JsonException
+     * @throws ClientExceptionInterface
+     * @throws JsonException
      */
     public function products(CatalogProducts $query) : string
     {

@@ -19,9 +19,9 @@ Create Client object using the following code:
 ```php
 use PlaystationStoreApi\Client;
 use PlaystationStoreApi\Enum\Region;
-use \GuzzleHttp\Client as HttpClient;
+use GuzzleHttp\Client as HttpClient;
 
-$clientApi = new Client(new Region(Region::RUSSIA), new HttpClient());
+$clientApi = new Client(new Region(Region::UKRAINE_RUSSIAN), new HttpClient());
 ```
 
 ## 4. API Requests
@@ -36,10 +36,10 @@ $response = $clientApi->product()->get('EP0001-CUSA12042_00-GAME000000000000');
 
 ```php
 use PlaystationStoreApi\Query\CatalogProducts;
-use \PlaystationStoreApi\Enum\Category;
+use PlaystationStoreApi\Enum\Category;
 use PlaystationStoreApi\ValueObject\Pagination;
 
-$sha256Hash = 'get your code from request in browser';
+$sha256Hash = '<insert-your-sha256Hash>';
 $query = new CatalogProducts(new Category(Category::PS4_GAMES), $sha256Hash);
 $query->setPagination(new Pagination(10, 0));
 
