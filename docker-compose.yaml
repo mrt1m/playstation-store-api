@@ -1,7 +1,8 @@
 version: "3.8"
 services:
   php:
-    image: php:7.4.0alpha1-alpine
+    build:
+      context: .
     volumes:
       - ./:/app:z
     working_dir: /app

@@ -1,0 +1,919 @@
+{
+	"info": {
+		"_postman_id": "58a89413-559d-4de6-a161-d457730c67a8",
+		"name": "playstation api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19344332"
+	},
+	"item": [
+		{
+			"name": "graphql",
+			"item": [
+				{
+					"name": "Product list",
+					"item": [
+						{
+							"name": "Games PS4",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=categoryGridRetrieve&variables={\"id\":\"44d8bb20-653e-431e-8ad0-c0a365f68d2f\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "categoryGridRetrieve"
+										},
+										{
+											"key": "variables",
+											"value": "{\"id\":\"44d8bb20-653e-431e-8ad0-c0a365f68d2f\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PS5 games",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=categoryGridRetrieve&variables={\"id\":\"4cbf39e2-5749-4970-ba81-93a489e4570c\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "categoryGridRetrieve"
+										},
+										{
+											"key": "variables",
+											"value": "{\"id\":\"4cbf39e2-5749-4970-ba81-93a489e4570c\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Offers",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=categoryGridRetrieve&variables={\"id\":\"16b8d09a-d0e3-44e3-96cb-a3b2a21b6d69\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "categoryGridRetrieve"
+										},
+										{
+											"key": "variables",
+											"value": "{\"id\":\"16b8d09a-d0e3-44e3-96cb-a3b2a21b6d69\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Free games",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=categoryGridRetrieve&variables={\"id\":\"d9930400-c5c7-4a06-a28d-cc74888426dc\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "categoryGridRetrieve"
+										},
+										{
+											"key": "variables",
+											"value": "{\"id\":\"d9930400-c5c7-4a06-a28d-cc74888426dc\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PlayStation VR",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=categoryGridRetrieve&variables={\"id\":\"95239ca7-2dcf-43d9-8d4b-b7672ee9304a\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "categoryGridRetrieve"
+										},
+										{
+											"key": "variables",
+											"value": "{\"id\":\"95239ca7-2dcf-43d9-8d4b-b7672ee9304a\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PlayStation VR2",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=categoryGridRetrieve&variables={\"id\":\"62c2a3b6-41cf-4808-ba48-1e5581eeea35\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "categoryGridRetrieve"
+										},
+										{
+											"key": "variables",
+											"value": "{\"id\":\"62c2a3b6-41cf-4808-ba48-1e5581eeea35\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EA Play - games",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=categoryGridRetrieve&variables={\"id\":\"74d4e266-5c64-4c61-a7e3-1b6e78f643e6\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "categoryGridRetrieve"
+										},
+										{
+											"key": "variables",
+											"value": "{\"id\":\"74d4e266-5c64-4c61-a7e3-1b6e78f643e6\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EA Play - early access",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=categoryGridRetrieve&variables={\"id\":\"2ff6eb11-f271-4803-9f79-5b28586f116e\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "categoryGridRetrieve"
+										},
+										{
+											"key": "variables",
+											"value": "{\"id\":\"2ff6eb11-f271-4803-9f79-5b28586f116e\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "metGetAddOnsByTitleId",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=metGetAddOnsByTitleId&variables={\"npTitleId\":\"CUSA12042_00\", \"pageArgs\":{\"size\": 2, \"offset\": 2}}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"e98d01ff5c1854409a405a5f79b5a9bcd36a5c0679fb33f4e18113c157d4d916\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "metGetAddOnsByTitleId"
+										},
+										{
+											"key": "variables",
+											"value": "{\"npTitleId\":\"CUSA12042_00\", \"pageArgs\":{\"size\": 2, \"offset\": 2}}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"e98d01ff5c1854409a405a5f79b5a9bcd36a5c0679fb33f4e18113c157d4d916\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PS Plus - subscriptions",
+					"item": [
+						{
+							"name": "PlayStation Plus Deluxe",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=featuresRetrieve&variables={\"tierLabel\":\"TIER_30\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{featuresRetrieve_sha256Hash}}\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "featuresRetrieve"
+										},
+										{
+											"key": "variables",
+											"value": "{\"tierLabel\":\"TIER_30\"}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{featuresRetrieve_sha256Hash}}\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PlayStation Plus Extra",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=featuresRetrieve&variables={\"tierLabel\":\"TIER_20\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{featuresRetrieve_sha256Hash}}\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "featuresRetrieve"
+										},
+										{
+											"key": "variables",
+											"value": "{\"tierLabel\":\"TIER_20\"}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{featuresRetrieve_sha256Hash}}\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PlayStation Plus Essential",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=featuresRetrieve&variables={\"tierLabel\":\"TIER_10\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{featuresRetrieve_sha256Hash}}\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "featuresRetrieve"
+										},
+										{
+											"key": "variables",
+											"value": "{\"tierLabel\":\"TIER_10\"}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{featuresRetrieve_sha256Hash}}\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Detail game info",
+					"item": [
+						{
+							"name": "metGetProductById",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=metGetProductById&variables={\"productId\":\"{{productId}}\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"a128042177bd93dd831164103d53b73ef790d56f51dae647064cb8f9d9fc9d1a\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "metGetProductById"
+										},
+										{
+											"key": "variables",
+											"value": "{\"productId\":\"{{productId}}\"}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"a128042177bd93dd831164103d53b73ef790d56f51dae647064cb8f9d9fc9d1a\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "metGetConceptById",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=metGetConceptById&variables={\"conceptId\":\"{{conceptId}}\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"cc90404ac049d935afbd9968aef523da2b6723abfb9d586e5f77ebf7c5289006\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "metGetConceptById"
+										},
+										{
+											"key": "variables",
+											"value": "{\"conceptId\":\"{{conceptId}}\"}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"cc90404ac049d935afbd9968aef523da2b6723abfb9d586e5f77ebf7c5289006\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "metGetConceptByProductIdQuery",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=metGetConceptByProductIdQuery&variables={\"productId\":\"{{productId}}\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"0a4c9f3693b3604df1c8341fdc3e481f42eeecf961a996baaa65e65a657a6433\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "metGetConceptByProductIdQuery"
+										},
+										{
+											"key": "variables",
+											"value": "{\"productId\":\"{{productId}}\"}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"0a4c9f3693b3604df1c8341fdc3e481f42eeecf961a996baaa65e65a657a6433\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "metGetPricingDataByConceptId",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=metGetPricingDataByConceptId&variables={\"conceptId\":\"{{conceptId}}\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"abcb311ea830e679fe2b697a27f755764535d825b24510ab1239a4ca3092bd09\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "metGetPricingDataByConceptId"
+										},
+										{
+											"key": "variables",
+											"value": "{\"conceptId\":\"{{conceptId}}\"}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"abcb311ea830e679fe2b697a27f755764535d825b24510ab1239a4ca3092bd09\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "rest api",
+			"item": [
+				{
+					"name": "Detail product info",
+					"item": [
+						{
+							"name": "Assassin's Creed® Одиссея",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{playstation_host_rest_api}}/{{playstation_region}}/{{playstation_language}}/999/:productId",
+									"host": [
+										"{{playstation_host_rest_api}}"
+									],
+									"path": [
+										"{{playstation_region}}",
+										"{{playstation_language}}",
+										"999",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "EP0001-CUSA12042_00-GAME000000000000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Far Cry® 6",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{playstation_host_rest_api}}/{{playstation_region}}/{{playstation_language}}/999/:productId",
+									"host": [
+										"{{playstation_host_rest_api}}"
+									],
+									"path": [
+										"{{playstation_region}}",
+										"{{playstation_language}}",
+										"999",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "EP0001-PPSA01874_00-FC6EDSTANDARD000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "原神 (泰语, 日语, 韩语, 简体中文, 繁体中文, 英语)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{playstation_host_rest_api}}/{{playstation_region}}/{{playstation_language}}/999/:productId",
+									"host": [
+										"{{playstation_host_rest_api}}"
+									],
+									"path": [
+										"{{playstation_region}}",
+										"{{playstation_language}}",
+										"999",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "HP6245-PPSA02585_00-CNRELGENSHIN0000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "索尼克 未知邊境",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{playstation_host_rest_api}}/{{playstation_region}}/{{playstation_language}}/999/:productId",
+									"host": [
+										"{{playstation_host_rest_api}}"
+									],
+									"path": [
+										"{{playstation_region}}",
+										"{{playstation_language}}",
+										"999",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "JP0177-PPSA06388_00-SONICRANGERS0000"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"let result = pm.environment.get(\"locale\").split(\"-\");",
+									"",
+									"pm.globals.set(\"playstation_language\", result.shift().toLowerCase());",
+									"pm.globals.set(\"playstation_region\", result.pop().toLowerCase());",
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "playstation_host_graphql_api",
+			"value": "https://web.np.playstation.com",
+			"type": "string"
+		},
+		{
+			"key": "playstation_host_rest_api",
+			"value": "https://store.playstation.com/store/api/chihiro/00_09_000/container",
+			"type": "string"
+		},
+		{
+			"key": "playstation_region",
+			"value": "ua",
+			"type": "string"
+		},
+		{
+			"key": "playstation_language",
+			"value": "ru",
+			"type": "string"
+		},
+		{
+			"key": "locale",
+			"value": "ru-UA",
+			"type": "string"
+		},
+		{
+			"key": "sha256Hash",
+			"value": "4ce7d410a4db2c8b635a48c1dcec375906ff63b19dadd87e073f8fd0c0481d35",
+			"type": "string"
+		},
+		{
+			"key": "featuresRetrieve_sha256Hash",
+			"value": "010870e8b9269c5bcf06b60190edbf5229310d8fae5b86515ad73f05bd11c4d1",
+			"type": "string"
+		},
+		{
+			"key": "productId",
+			"value": "EP0001-CUSA12042_00-EDITIONULTIMATE0",
+			"type": "string"
+		},
+		{
+			"key": "conceptId",
+			"value": "232447",
+			"type": "string"
+		}
+	]
+}
