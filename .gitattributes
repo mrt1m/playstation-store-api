@@ -1,2 +1,7 @@
 /examples/ export-ignore
+/response/ export-ignore
+/postman_collection/ export-ignore
 /docker-compose.yaml export-ignore
+/Dockerfile export-ignore
+/.gitignore export-ignore
+/Makefile export-ignore

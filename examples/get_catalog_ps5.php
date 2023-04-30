@@ -1,16 +1,18 @@
 <?php
+declare(strict_types=1);
+
+use PlaystationStoreApi\Client;
+use GuzzleHttp\Client as HTTPClient;
+use PlaystationStoreApi\Enum\CategoryEnum;
+use PlaystationStoreApi\Enum\RegionEnum;
+use PlaystationStoreApi\Request\RequestProductList;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use PlaystationStoreApi\Client;
-use PlaystationStoreApi\Enum\Region;
-use GuzzleHttp\Client as HttpClient;
-use PlaystationStoreApi\Query\CatalogProducts;
-use PlaystationStoreApi\Enum\Category;
+const API_URL = 'https://web.np.playstation.com/api/graphql/v1/';
 
-$clientApi = new Client(new Region(Region::UKRAINE_RUSSIAN), new HttpClient());
+$client = new Client(RegionEnum::UNITED_STATES, new HTTPClient(['base_uri' => API_URL, 'timeout' => 5]));
 
-$sha256Hash = '<insert-your-sha256Hash>';
-$result = $clientApi->catalog()->products(new CatalogProducts(new Category(Category::PS5_GAMES), $sha256Hash));
+$result = $client->get(RequestProductList::createFromCategory(CategoryEnum::PS5_GAMES));
 
-var_dump($result);
+echo json_encode($result, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);

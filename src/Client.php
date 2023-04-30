@@ -3,32 +3,95 @@ declare(strict_types=1);
 
 namespace PlaystationStoreApi;
 
-use PlaystationStoreApi\Actions\Catalog;
-use PlaystationStoreApi\Actions\Product;
-use PlaystationStoreApi\ApiClients\Chihiro;
-use PlaystationStoreApi\ApiClients\GraphQL;
-use PlaystationStoreApi\Enum\Region;
-use Psr\Http\Client\ClientInterface;
+use Exception;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
+use JsonException;
+use PlaystationStoreApi\Enum\RegionEnum;
+use PlaystationStoreApi\Exception\ResponseException;
+use PlaystationStoreApi\Request\BaseRequest;
+use Psr\Http\Message\ResponseInterface;
 
-class Client
+final class Client
 {
-    protected Chihiro $chihiroApiCLient;
+    public readonly RequestLocatorService $requestServiceLocator;
 
-    protected GraphQL $graphQLApiClient;
-
-    public function __construct(Region $region, ClientInterface $client)
-    {
-        $this->chihiroApiCLient = new Chihiro($region, $client);
-        $this->graphQLApiClient = new GraphQL($region, $client);
+    public function __construct(
+        private readonly RegionEnum $regionEnum,
+        private readonly ClientInterface $client,
+        RequestLocatorService $requestServiceLocator = null
+    ) {
+        $this->requestServiceLocator = $requestServiceLocator ?? RequestLocatorService::default();
     }
 
-    public function product(): Product
+    /**
+     * @throws ResponseException
+     */
+    public function get(BaseRequest $request): mixed
     {
-        return new Product($this->chihiroApiCLient);
+        try {
+
+            return json_decode(
+                $this->getResponse($request)->getBody()->getContents(),
+                true,
+                512,
+                JSON_THROW_ON_ERROR
+            );
+
+        } catch (JsonException $e) {
+            throw new ResponseException(
+                $request,
+                'An error occurred while trying to decode response',
+                $e->getCode(),
+                $e
+            );
+        }
     }
 
-    public function catalog(): Catalog
+    /**
+     * @throws ResponseException
+     */
+    public function getResponse(BaseRequest $request): ResponseInterface
     {
-        return new Catalog($this->graphQLApiClient);
+        try {
+
+            $info = $this->requestServiceLocator->get($request::class);
+
+            return $this->client->request(
+                'GET',
+                'op?' . http_build_query(
+                    [
+                        'operationName' => $info->name,
+                        'variables' => json_encode($request, JSON_THROW_ON_ERROR),
+                        'extensions' => json_encode(
+                            [
+                                'persistedQuery' => [
+                                    'version' => 1,
+                                    'sha256Hash' => $info->value,
+                                ],
+                            ],
+                            JSON_THROW_ON_ERROR
+                        ),
+                    ]
+                ),
+                [
+                    'headers' => [
+                        'x-psn-store-locale-override' => $this->regionEnum->value
+                    ],
+                ]
+            );
+
+        } catch (Exception|GuzzleException $e) {
+
+            var_dump($e->getMessage());
+
+            exit();
+            throw new ResponseException(
+                $request,
+                'An error occurred while trying to request',
+                $e->getCode(),
+                $e
+            );
+        }
     }
 }
