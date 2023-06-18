@@ -23,11 +23,21 @@ final class RequestProductList implements BaseRequest
         );
     }
 
-
     public function __construct(
         public readonly string $id,
-        public readonly Pagination $pageArgs,
+        public Pagination $pageArgs,
         public readonly Sorting $sortBy
     ) {
+    }
+
+    public function createNextPageRequest(): RequestProductList
+    {
+        $nextPageRequest = clone $this;
+        $nextPageRequest->pageArgs = new Pagination(
+            $this->pageArgs->size,
+            $this->pageArgs->offset + $this->pageArgs->size
+        );
+
+        return $nextPageRequest;
     }
 }
