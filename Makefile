@@ -10,6 +10,12 @@ get_catalog_ps4:
 get_catalog_ps5:
 	make run_example name=get_catalog_ps5
 
+get_catalog_pagination_next_page:
+	make run_example name=get_catalog_pagination_next_page
+
+get_catalog_pagination_last_page:
+	make run_example name=get_catalog_pagination_last_page
+
 ps_plus_deluxe:
 	make run_example name=ps_plus_deluxe
 

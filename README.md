@@ -61,7 +61,11 @@ $response = $client->get(new RequestConceptById('10002694'));
 ```php
 use PlaystationStoreApi\Request\RequestProductList;
 
-$response = $client->get(RequestProductList::createFromCategory(CategoryEnum::PS5_GAMES));
+$request = RequestProductList::createFromCategory(CategoryEnum::PS5_GAMES);
+
+$firstPageResponse = $client->get($request);
+
+$nextPageResponse = $client->get($request->createNextPageRequest());
 ```
 
 ## 5. Run examples
