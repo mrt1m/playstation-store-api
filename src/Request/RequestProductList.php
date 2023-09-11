@@ -14,11 +14,11 @@ final class RequestProductList implements BaseRequest
 
     public array $facetOptions = [];
 
-    public static function createFromCategory(CategoryEnum $categoryEnum): RequestProductList
+    public static function createFromCategory(CategoryEnum $categoryEnum, $pagination = 10): RequestProductList
     {
         return new self(
             $categoryEnum->value,
-            new Pagination(10),
+            new Pagination($pagination),
             Sorting::createFromCatalogSorting(CatalogSortingEnum::RELEASE_DATE)
         );
     }
