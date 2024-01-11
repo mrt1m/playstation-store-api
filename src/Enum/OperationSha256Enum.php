@@ -18,4 +18,8 @@ enum OperationSha256Enum: string
     case metGetConceptById = 'cc90404ac049d935afbd9968aef523da2b6723abfb9d586e5f77ebf7c5289006';
 
     case metGetPricingDataByConceptId = 'abcb311ea830e679fe2b697a27f755764535d825b24510ab1239a4ca3092bd09';
+
+    case wcaProductStarRatingRetrive = 'cedd370c39e89da20efa7b2e55710e88cb6e6843cc2f8203f7e73ba4751e7253';
+
+    case wcaConceptStarRatingRetrive = 'e12dc5cef72296a437b4d71e0b130010bf3707ab981b585ba00d1d5773ce2092';
 }

@@ -88,7 +88,7 @@ You can get sha256Hash from browser request:
 3) sha256Hash is in the extensions parameter, example:
 
 ```
-https://web.np.playstation.com/api/graphql/v1//op?operationName=categoryGridRetrieve&variables={"id":"44d8bb20-653e-431e-8ad0-c0a365f68d2f","pageArgs":{"size":24,"offset":0},"sortBy":{"name":"productReleaseDate","isAscending":false},"filterBy":[],"facetOptions":[]}&extensions={"persistedQuery":{"version":1,"sha256Hash":"9845afc0dbaab4965f6563fffc703f588c8e76792000e8610843b8d3ee9c4c09"}}
+https://web.np.playstation.com/api/graphql/v1/op?operationName=categoryGridRetrieve&variables={"id":"44d8bb20-653e-431e-8ad0-c0a365f68d2f","pageArgs":{"size":24,"offset":0},"sortBy":{"name":"productReleaseDate","isAscending":false},"filterBy":[],"facetOptions":[]}&extensions={"persistedQuery":{"version":1,"sha256Hash":"9845afc0dbaab4965f6563fffc703f588c8e76792000e8610843b8d3ee9c4c09"}}
 ```
 If default sha256Hash will be blocked, you can replace the base value:
 1) Get new sha256Hash value

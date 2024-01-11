@@ -10,15 +10,19 @@ use PlaystationStoreApi\ValueObject\Sorting;
 
 final class RequestProductList implements BaseRequest
 {
+    public const DEFAULT_PAGINATION_SIZE = 20;
+
     public array $filterBy = [];
 
     public array $facetOptions = [];
 
-    public static function createFromCategory(CategoryEnum $categoryEnum): RequestProductList
-    {
+    public static function createFromCategory(
+        CategoryEnum $categoryEnum,
+        Pagination $pageArgs = null
+    ): RequestProductList {
         return new self(
             $categoryEnum->value,
-            new Pagination(10),
+            $pageArgs ?? new Pagination(self::DEFAULT_PAGINATION_SIZE),
             Sorting::createFromCatalogSorting(CatalogSortingEnum::RELEASE_DATE)
         );
     }
