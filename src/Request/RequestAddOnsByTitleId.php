@@ -7,6 +7,8 @@ use PlaystationStoreApi\ValueObject\Pagination;
 
 final class RequestAddOnsByTitleId implements BaseRequest
 {
+    public const DEFAULT_PAGINATION_SIZE = 20;
+
     public readonly Pagination $pageArgs;
 
     public function __construct(
@@ -14,7 +16,7 @@ final class RequestAddOnsByTitleId implements BaseRequest
         Pagination $pageArgs = null
     )
     {
-        $this->pageArgs = $pageArgs ?? new Pagination(20);
+        $this->pageArgs = $pageArgs ?? new Pagination(self::DEFAULT_PAGINATION_SIZE);
     }
 }
 

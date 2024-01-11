@@ -1,7 +1,7 @@
 .PHONY: build get_catalog_ps4 get_catalog_ps5 ps_plus_deluxe ps_plus_extra ps_plus_essential get_product_by_id get_concept_by_id get_concept_by_product_id run_example
 
 build:
-	docker compose build php\
+	docker compose build php \
 	&& docker compose run --rm php composer install -n
 
 get_catalog_ps4:
@@ -39,6 +39,12 @@ get_pricing_data_by_concept_id:
 
 get_add_ons_by_title_id:
 	make run_example name=get_add_ons_by_title_id
+
+get_product_star_rating:
+	make run_example name=get_product_star_rating
+
+get_concept_star_rating:
+	make run_example name=get_concept_star_rating
 
 run_example:
 	docker compose run --rm php -f examples/${name}.php > response/${name}.json

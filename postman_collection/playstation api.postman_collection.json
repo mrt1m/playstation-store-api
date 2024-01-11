@@ -64,7 +64,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=categoryGridRetrieve&variables={\"id\":\"4cbf39e2-5749-4970-ba81-93a489e4570c\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}",
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=categoryGridRetrieve&variables={\"id\":\"4cbf39e2-5749-4970-ba81-93a489e4570c\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[\"storeDisplayClassification:ADD_ON\"],\"facetOptions\":[]}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"{{sha256Hash}}\"}}",
 									"host": [
 										"{{playstation_host_graphql_api}}"
 									],
@@ -81,7 +81,7 @@
 										},
 										{
 											"key": "variables",
-											"value": "{\"id\":\"4cbf39e2-5749-4970-ba81-93a489e4570c\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[],\"facetOptions\":[]}"
+											"value": "{\"id\":\"4cbf39e2-5749-4970-ba81-93a489e4570c\",\"pageArgs\":{\"size\":24,\"offset\":0},\"sortBy\":null,\"filterBy\":[\"storeDisplayClassification:ADD_ON\"],\"facetOptions\":[]}"
 										},
 										{
 											"key": "extensions",
@@ -576,6 +576,86 @@
 										{
 											"key": "extensions",
 											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"cc90404ac049d935afbd9968aef523da2b6723abfb9d586e5f77ebf7c5289006\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wcaProductStarRatingRetrive",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=wcaProductStarRatingRetrive&variables={\"productId\":\"{{productId}}\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"cedd370c39e89da20efa7b2e55710e88cb6e6843cc2f8203f7e73ba4751e7253\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "wcaProductStarRatingRetrive"
+										},
+										{
+											"key": "variables",
+											"value": "{\"productId\":\"{{productId}}\"}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"cedd370c39e89da20efa7b2e55710e88cb6e6843cc2f8203f7e73ba4751e7253\"}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wcaConceptStarRatingRetrive",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-psn-store-locale-override",
+										"value": "{{locale}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{playstation_host_graphql_api}}/api/graphql/v1/op?operationName=wcaConceptStarRatingRetrive&variables={\"conceptId\":\"{{conceptId}}\"}&extensions={\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"e12dc5cef72296a437b4d71e0b130010bf3707ab981b585ba00d1d5773ce2092\"}}",
+									"host": [
+										"{{playstation_host_graphql_api}}"
+									],
+									"path": [
+										"api",
+										"graphql",
+										"v1",
+										"op"
+									],
+									"query": [
+										{
+											"key": "operationName",
+											"value": "wcaConceptStarRatingRetrive"
+										},
+										{
+											"key": "variables",
+											"value": "{\"conceptId\":\"{{conceptId}}\"}"
+										},
+										{
+											"key": "extensions",
+											"value": "{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"e12dc5cef72296a437b4d71e0b130010bf3707ab981b585ba00d1d5773ce2092\"}}"
 										}
 									]
 								}

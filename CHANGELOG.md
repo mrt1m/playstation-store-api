@@ -1,3 +1,9 @@
+## 2.1.0 - 2024-01-11
+
+- Added new method for get star rating information
+- Added category id with all concepts
+- Update parameters for RequestProductList
+
 ## 2.0.1 - 2023-06-18
 
 - Added new method for create next page request
