@@ -3,7 +3,7 @@
   "description": "A simple wrapper for working with PlayStation Store API",
   "keywords": ["api-client", "playstation", "playstation-store", "php8"],
   "type": "library",
-  "license": "MIT License",
+  "license": "MIT",
   "authors": [
     {
       "name": "mrt1m",
