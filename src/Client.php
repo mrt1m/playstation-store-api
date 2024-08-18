@@ -14,6 +14,10 @@ use Psr\Http\Message\ResponseInterface;
 
 final class Client
 {
+    public const HEADER_CONTENT_TYPE = 'application/json';
+
+    public const HEADER_ORIGIN = 'https://store.playstation.com';
+
     public readonly RequestLocatorService $requestServiceLocator;
 
     public function __construct(
@@ -76,16 +80,15 @@ final class Client
                 ),
                 [
                     'headers' => [
-                        'x-psn-store-locale-override' => $this->regionEnum->value
+                        'x-psn-store-locale-override' => $this->regionEnum->value,
+                        'content-type' => self::HEADER_CONTENT_TYPE,
+                        'origin' => self::HEADER_ORIGIN,
                     ],
                 ]
             );
 
         } catch (Exception|GuzzleException $e) {
 
-            var_dump($e->getMessage());
-
-            exit();
             throw new ResponseException(
                 $request,
                 'An error occurred while trying to request',
