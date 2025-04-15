@@ -1,7 +1,8 @@
 # playstation-store-api
 
 💖 Support the project with a donation — it helps keep things going!
-[Donate on Boosty](https://boosty.to/tishmukhametov/donate)
+
+💸 [Donate on Boosty](https://boosty.to/tishmukhametov/donate)
 
 ## 1. Prerequisites
 
