@@ -1,5 +1,7 @@
 # playstation-store-api
 
+💖 [Support the project with a donation](https://boosty.to/tishmukhametov/donate) — it helps keep things going!
+
 ## 1. Prerequisites
 
 * PHP 8.1 or later
