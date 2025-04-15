@@ -21,6 +21,11 @@
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -60,6 +65,11 @@
 									{
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
 										"type": "text"
 									}
 								],
@@ -101,6 +111,11 @@
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -140,6 +155,11 @@
 									{
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
 										"type": "text"
 									}
 								],
@@ -181,6 +201,11 @@
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -220,6 +245,11 @@
 									{
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
 										"type": "text"
 									}
 								],
@@ -261,6 +291,11 @@
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -301,6 +336,11 @@
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -340,6 +380,11 @@
 									{
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
 										"type": "text"
 									}
 								],
@@ -386,6 +431,11 @@
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -426,6 +476,11 @@
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -465,6 +520,11 @@
 									{
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
 										"type": "text"
 									}
 								],
@@ -511,6 +571,11 @@
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -550,6 +615,11 @@
 									{
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
 										"type": "text"
 									}
 								],
@@ -591,6 +661,11 @@
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -630,6 +705,11 @@
 									{
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
 										"type": "text"
 									}
 								],
@@ -671,6 +751,11 @@
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
 										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"url": {
@@ -710,6 +795,11 @@
 									{
 										"key": "x-psn-store-locale-override",
 										"value": "{{locale}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
 										"type": "text"
 									}
 								],
