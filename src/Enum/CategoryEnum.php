@@ -23,7 +23,7 @@ enum CategoryEnum: string
 
     case FREE_GAMES = 'd9930400-c5c7-4a06-a28d-cc74888426dc';
 
-    case NEW_GAMES = 'e1699f77-77e1-43ca-a296-26d08abacb0f'
+    case NEW_GAMES = 'e1699f77-77e1-43ca-a296-26d08abacb0f';
 
     case OFFERS = '16b8d09a-d0e3-44e3-96cb-a3b2a21b6d69';
 
