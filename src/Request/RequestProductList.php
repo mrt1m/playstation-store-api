@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace PlaystationStoreApi\Request;
@@ -12,13 +13,15 @@ final class RequestProductList implements BaseRequest
 {
     public const DEFAULT_PAGINATION_SIZE = 20;
 
+    /** @var array<string, mixed> */
     public array $filterBy = [];
 
+    /** @var array<string, mixed> */
     public array $facetOptions = [];
 
     public static function createFromCategory(
         CategoryEnum $categoryEnum,
-        Pagination $pageArgs = null
+        ?Pagination $pageArgs = null
     ): RequestProductList {
         return new self(
             $categoryEnum->value,
@@ -36,7 +39,7 @@ final class RequestProductList implements BaseRequest
 
     public function createNextPageRequest(): RequestProductList
     {
-        $nextPageRequest = clone $this;
+        $nextPageRequest           = clone $this;
         $nextPageRequest->pageArgs = new Pagination(
             $this->pageArgs->size,
             $this->pageArgs->offset + $this->pageArgs->size

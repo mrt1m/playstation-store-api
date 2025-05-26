@@ -1,23 +1,60 @@
 {
   "name": "mrt1m/playstation-store-api",
   "description": "A simple wrapper for working with PlayStation Store API",
-  "keywords": ["api-client", "playstation", "playstation-store", "php8"],
-  "type": "library",
   "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "api-client",
+    "playstation",
+    "playstation-store",
+    "php8"
+  ],
   "authors": [
     {
       "name": "mrt1m",
       "email": "mrt1m@ya.ru"
     }
   ],
+  "support": {
+      "issues": "https://github.com/mrt1m/playstation-store-api/issues",
+      "source": "https://github.com/mrt1m/playstation-store-api"
+  },
   "require": {
-    "ext-json": "*",
     "php": ">=8.1",
+    "ext-json": "*",
     "guzzlehttp/guzzle": "^7.3.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.75",
+    "phpunit/phpunit": "^7.5 || ^8.5 || ^9.3",
+    "phpstan/phpstan": "^2.1",
+    "phpstan/phpstan-deprecation-rules": "^2.0",
+    "phpstan/phpstan-strict-rules": "^2.0",
+    "psalm/phar": "5.26.1"
   },
   "autoload": {
     "psr-4": {
       "PlaystationStoreApi\\": "src/"
     }
+  },
+  "autoload-dev": {
+        "psr-4": {
+            "PlaystationStoreApi\\Test\\": [
+                "tests"
+            ]
+        }
+    },
+  "scripts": {
+    "codestyle": "php-cs-fixer fix",
+    "coverage": "phpunit --coverage-html=\".phpunit.cache/code-coverage\"",
+    "psalm": "vendor/bin/psalm.phar -c psalm.xml --show-info=true",
+    "phpstan": "phpstan analyze --memory-limit 512M --configuration .phpstan.neon",
+    "phpunit": "phpunit",
+    "test": [
+      "@psalm",
+      "@phpstan",
+      "@phpunit",
+      "@codestyle --dry-run --diff"
+    ]
   }
 }

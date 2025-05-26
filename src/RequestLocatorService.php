@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace PlaystationStoreApi;
@@ -15,12 +16,11 @@ use PlaystationStoreApi\Request\RequestProductList;
 use PlaystationStoreApi\Request\RequestPSPlusTier;
 use PlaystationStoreApi\Request\RequestProductStarRating;
 use PlaystationStoreApi\Request\RequestConceptStarRating;
-use StringBackedEnum;
 
 final class RequestLocatorService
 {
     /**
-     * @var StringBackedEnum[]
+     * @var array<string, BackedEnum>
      */
     private array $request = [];
 
@@ -59,5 +59,4 @@ final class RequestLocatorService
 
         throw new RequestNotFoundException($requestClassName . ' not found in request locator');
     }
-
 }

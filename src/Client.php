@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace PlaystationStoreApi;
@@ -24,7 +25,7 @@ final class Client
     public function __construct(
         private readonly RegionEnum $regionEnum,
         private readonly ClientInterface $client,
-        RequestLocatorService $requestServiceLocator = null
+        ?RequestLocatorService $requestServiceLocator = null
     ) {
         $this->requestServiceLocator = $requestServiceLocator ?? RequestLocatorService::default();
     }
@@ -55,6 +56,7 @@ final class Client
 
     /**
      * @throws ResponseException
+     * @param array<string, string> $cookies
      */
     public function getResponse(BaseRequest $request, array $cookies = []): ResponseInterface
     {
@@ -90,17 +92,21 @@ final class Client
             );
 
         } catch (Exception|GuzzleException $e) {
-           return $this->tryWithCookie($request, $cookies, $e);
+            return $this->tryWithCookie($request, $cookies, $e);
         }
     }
 
-    private function tryWithCookie(BaseRequest $request, array $cookies, Throwable $exception): mixed
+    /**
+     * @param array<string, string> $cookies
+     * @throws ResponseException
+     */
+    private function tryWithCookie(BaseRequest $request, array $cookies, Throwable $exception): ResponseInterface
     {
-        if (empty($cookies) && $exception instanceof BadResponseException) {
+        if (count($cookies) === 0 && $exception instanceof BadResponseException) {
             $cookies = [];
 
             foreach ($exception->getResponse()->getHeader('Set-Cookie') as $value) {
-                [$item,] = explode(';', $value, 2);
+                [$item,]                    = explode(';', $value, 2);
                 [$cookieName, $cookieValue] = explode('=', $item, 2);
 
                 $cookies[$cookieName] = $cookieValue;
@@ -112,7 +118,7 @@ final class Client
         throw new ResponseException(
             $request,
             'An error occurred while trying to request',
-            $exception->getCode(),
+            (int) $exception->getCode(),
             $exception
         );
     }
