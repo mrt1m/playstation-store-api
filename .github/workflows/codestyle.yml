@@ -1,0 +1,36 @@
+name: Codestyle
+
+on:
+  push:
+    paths:
+      - '**.php'
+
+  pull_request:
+
+jobs:
+  psalm:
+    name: Psalm
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer:v2
+          coverage: none
+        env:
+          update: true
+
+      - name: Install Dependencies
+        uses: nick-invision/retry@v3
+        with:
+          timeout_minutes: 5
+          max_attempts: 5
+          command: composer update --no-interaction --no-progress
+
+      - name: Coding Style Checks
+        run: composer run codestyle -- --dry-run --diff 

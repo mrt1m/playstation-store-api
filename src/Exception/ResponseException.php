@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace PlaystationStoreApi\Exception;
@@ -14,8 +15,7 @@ class ResponseException extends Exception
         string $message,
         int $code,
         Throwable $previous
-    )
-    {
+    ) {
         parent::__construct($message, $code, $previous);
     }
 }

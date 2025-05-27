@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="6.8.6@34ba9e1e5ea2e7396d3e2e644ee3e3a1d4336603">
+  <file src="src/Client.php">
+    <PossiblyUndefinedArrayOffset>
+      <code><![CDATA[$cookieValue]]></code>
+    </PossiblyUndefinedArrayOffset>
+  </file>
+</files>

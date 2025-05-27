@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace PlaystationStoreApi\Request;
@@ -13,10 +14,8 @@ final class RequestAddOnsByTitleId implements BaseRequest
 
     public function __construct(
         public readonly string $npTitleId,
-        Pagination $pageArgs = null
-    )
-    {
+        ?Pagination $pageArgs = null
+    ) {
         $this->pageArgs = $pageArgs ?? new Pagination(self::DEFAULT_PAGINATION_SIZE);
     }
 }
-
