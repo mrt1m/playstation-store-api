@@ -13,11 +13,23 @@
   "require": {
     "ext-json": "*",
     "php": ">=8.1",
-    "psr/http-client": "^1.0"
+    "psr/http-client": "^1.0",
+    "guzzlehttp/psr7": "^2.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.51",
+    "phpstan/phpstan": "^1.10"
   },
   "autoload": {
     "psr-4": {
       "PlaystationStoreApi\\": "src/"
     }
+  },
+  "scripts": {
+    "lint": [
+      "phpstan analyse",
+      "php-cs-fixer check --diff src"
+    ],
+    "lint-fix": "php-cs-fixer fix src"
   }
 }

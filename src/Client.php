@@ -1,8 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace PlaystationStoreApi;
 
+use GuzzleHttp\Psr7\Request as Psr7Request;
 use JsonException;
 use PlaystationStoreApi\Enum\RegionEnum;
 use PlaystationStoreApi\Exception\ResponseException;
@@ -57,29 +59,29 @@ final class Client
         try {
             $info = $this->requestServiceLocator->get($request::class);
 
-            return $this->client->request(
-                'GET',
-                'op?' . http_build_query(
-                    [
-                        'operationName' => $info->name,
-                        'variables' => json_encode($request, JSON_THROW_ON_ERROR),
-                        'extensions' => json_encode(
-                            [
-                                'persistedQuery' => [
-                                    'version' => 1,
-                                    'sha256Hash' => $info->value,
+            return $this->client->sendRequest(
+                new Psr7Request(
+                    'GET',
+                    'op?' . http_build_query(
+                        [
+                            'operationName' => $info->name,
+                            'variables' => json_encode($request, JSON_THROW_ON_ERROR),
+                            'extensions' => json_encode(
+                                [
+                                    'persistedQuery' => [
+                                        'version' => 1,
+                                        'sha256Hash' => $info->value,
+                                    ],
                                 ],
-                            ],
-                            JSON_THROW_ON_ERROR
-                        ),
-                    ]
-                ),
-                [
-                    'headers' => [
+                                JSON_THROW_ON_ERROR
+                            ),
+                        ]
+                    ),
+                    [
                         'x-psn-store-locale-override' => $this->regionEnum->value,
                         'content-type' => self::HEADER_CONTENT_TYPE,
-                    ],
-                ]
+                    ]
+                )
             );
 
         } catch (Throwable $e) {

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace PlaystationStoreApi\Enum;
@@ -11,7 +12,7 @@ enum CatalogSortingEnum: string
 
     case TOP_DOWNLOADS = 'downloads30';
 
-    case  PRODUCT_NAME = 'productName';
+    case PRODUCT_NAME = 'productName';
 
-    case  PRICE = 'webBasePrice';
+    case PRICE = 'webBasePrice';
 }

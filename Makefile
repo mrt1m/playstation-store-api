@@ -1,4 +1,4 @@
-.PHONY: build get_catalog_ps4 get_catalog_ps5 ps_plus_deluxe ps_plus_extra ps_plus_essential get_product_by_id get_concept_by_id get_concept_by_product_id run_example
+.PHONY: build get_catalog_ps4 get_catalog_ps5 ps_plus_deluxe ps_plus_extra ps_plus_essential get_product_by_id get_concept_by_id get_concept_by_product_id run_example lint lint-fix
 
 build:
 	docker compose build php \
@@ -48,5 +48,11 @@ get_concept_star_rating:
 
 run_example:
 	docker compose run --rm php -f ${name}.php > response/${name}.json
+
+lint:
+	docker compose run --rm -w /app php sh -lc "composer install -n --prefer-dist && composer lint"
+
+lint-fix:
+	docker compose run --rm -w /app php sh -lc "composer install -n --prefer-dist && composer lint-fix"
 
 
