@@ -3,15 +3,11 @@ declare(strict_types=1);
 
 namespace PlaystationStoreApi;
 
-use Exception;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Cookie\CookieJar;
-use GuzzleHttp\Exception\BadResponseException;
-use GuzzleHttp\Exception\GuzzleException;
 use JsonException;
 use PlaystationStoreApi\Enum\RegionEnum;
 use PlaystationStoreApi\Exception\ResponseException;
 use PlaystationStoreApi\Request\BaseRequest;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\ResponseInterface;
 use Throwable;
 
@@ -56,12 +52,10 @@ final class Client
     /**
      * @throws ResponseException
      */
-    public function getResponse(BaseRequest $request, array $cookies = []): ResponseInterface
+    public function getResponse(BaseRequest $request): ResponseInterface
     {
         try {
             $info = $this->requestServiceLocator->get($request::class);
-
-            $jar = CookieJar::fromArray($cookies, 'playstation.com');
 
             return $this->client->request(
                 'GET',
@@ -85,35 +79,16 @@ final class Client
                         'x-psn-store-locale-override' => $this->regionEnum->value,
                         'content-type' => self::HEADER_CONTENT_TYPE,
                     ],
-                    'cookies' => $jar,
                 ]
             );
 
-        } catch (Exception|GuzzleException $e) {
-           return $this->tryWithCookie($request, $cookies, $e);
+        } catch (Throwable $e) {
+            throw new ResponseException(
+                $request,
+                'An error occurred while trying to request',
+                $e->getCode(),
+                $e
+            );
         }
-    }
-
-    private function tryWithCookie(BaseRequest $request, array $cookies, Throwable $exception): mixed
-    {
-        if (empty($cookies) && $exception instanceof BadResponseException) {
-            $cookies = [];
-
-            foreach ($exception->getResponse()->getHeader('Set-Cookie') as $value) {
-                [$item,] = explode(';', $value, 2);
-                [$cookieName, $cookieValue] = explode('=', $item, 2);
-
-                $cookies[$cookieName] = $cookieValue;
-            }
-
-            return $this->getResponse($request, $cookies);
-        }
-
-        throw new ResponseException(
-            $request,
-            'An error occurred while trying to request',
-            $exception->getCode(),
-            $exception
-        );
     }
 }

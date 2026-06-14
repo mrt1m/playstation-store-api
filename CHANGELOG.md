@@ -1,3 +1,8 @@
+## 2.3.0 - 2026-06-14
+
+- Migrated to psr/http-client interfaces for improved interoperability with PSR-compatible HTTP clients.
+- Removed cookie handling from the getResponse() method. Cookies should now be configured and managed by the underlying HTTP client implementation.
+
 ## 2.2.1 - 2025-05-25
 
 fix CategoryEnum
