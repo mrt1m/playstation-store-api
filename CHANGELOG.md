@@ -1,3 +1,30 @@
+## 2.2.1 - 2025-05-25
+
+fix CategoryEnum
+
+## 2.2.0 - 2025-04-30
+
+Add NEW_GAMES for CategoryEnum
+
+## 2.1.3 - 2025-04-15
+
+fix Access Denied
+
+## 2.1.2 - 2024-08-18
+
+add new required headers
+
+- content-type
+- origin
+
+## 2.1.1 - 2024-04-07
+
+update composer json
+
+- change guzzlehttp/guzzle
+- update license
+- add description and keywords
+
 ## 2.1.0 - 2024-01-11
 
 - Added new method for get star rating information
