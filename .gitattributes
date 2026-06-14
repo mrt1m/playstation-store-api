@@ -5,3 +5,4 @@
 /Dockerfile export-ignore
 /.gitignore export-ignore
 /Makefile export-ignore
+/.github export-ignore
