@@ -4,4 +4,3 @@ services:
       context: .
     volumes:
       - ./:/app:z
-    working_dir: /app

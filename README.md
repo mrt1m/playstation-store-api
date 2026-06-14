@@ -1,12 +1,13 @@
-# playstation-store-api
+![Logo](https://github.com/mrt1m/playstation-store-api/raw/main/.github/assets/banner.png)
 
-💖 [Support the project with a donation](https://boosty.to/tishmukhametov/donate) — it helps keep things going!
+**playstation-store-api** is simple wrapper for working with PlayStation Store API 🎮
 
-## 1. Prerequisites
+Installation
+------------
+
+### Prerequisites
 
 * PHP 8.1 or later
-
-## 2. Installation
 
 The playstation-store-api can be installed using Composer by running the following command:
 
@@ -14,7 +15,8 @@ The playstation-store-api can be installed using Composer by running the followi
 composer require mrt1m/playstation-store-api
 ```
 
-## 3. Initialization
+Installation
+------------
 
 Create Client object using the following code:
 
@@ -34,9 +36,10 @@ const API_URL = 'https://web.np.playstation.com/api/graphql/v1/';
 $client = new Client(RegionEnum::UNITED_STATES, new HTTPClient(['base_uri' => API_URL, 'timeout' => 5]));
 ```
 
-## 4. API Requests
+API Requests examples
+------------
 
-### 4.1. Request product data by id
+### Request product data by id
 
 ```php
 use PlaystationStoreApi\Request\RequestProductById;
@@ -47,7 +50,7 @@ use PlaystationStoreApi\Request\RequestProductById;
 $response = $client->get(new RequestProductById('UP0001-CUSA09311_00-GAME000000000000'));
 ```
 
-### 4.2. Request concept data by id
+### Request concept data by id
 
 ```php
 use PlaystationStoreApi\Request\RequestConceptById;
@@ -58,7 +61,7 @@ use PlaystationStoreApi\Request\RequestConceptById;
 $response = $client->get(new RequestConceptById('10002694'));
 ```
 
-### 4.3. Request catalog data
+### Request catalog data
 
 ```php
 use PlaystationStoreApi\Request\RequestProductList;
@@ -70,7 +73,8 @@ $firstPageResponse = $client->get($request);
 $nextPageResponse = $client->get($request->createNextPageRequest());
 ```
 
-## 5. Run examples
+Run examples
+------------
 
 If you want run [examples](./examples), you need:
 1) Docker and docker compose
@@ -80,7 +84,8 @@ make get_add_ons_by_title_id
 ```
 3) Get api response from [response](./response) directory
 
-## 5. About request signing
+About request signing
+------------
 
 For all request you need send sha256Hash. It's request signature.
 
@@ -120,7 +125,8 @@ $client = new Client(
 );
 ```
 
-## 6. Custom request
+Custom request
+------------
 
 If you need custom request:
 1) Create new request class then implement ``PlaystationStoreApi\Request\BaseRequest``
@@ -128,8 +134,3 @@ If you need custom request:
 3) Give new RequestLocatorService to client
 4) Execute client ``get`` method with new request
 
-## 7. Postman collection
-
-You can try playstation api with [postman](https://www.postman.com/).
-
-For import collection download [playstation api.postman_collection.json](./postman_collection/playstation%20api.postman_collection.json)

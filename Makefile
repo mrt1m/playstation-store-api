@@ -47,6 +47,6 @@ get_concept_star_rating:
 	make run_example name=get_concept_star_rating
 
 run_example:
-	docker compose run --rm php -f examples/${name}.php > response/${name}.json
+	docker compose run --rm php -f ${name}.php > response/${name}.json
 
 

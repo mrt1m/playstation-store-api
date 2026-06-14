@@ -7,4 +7,4 @@ RUN curl -sS https://getcomposer.org/installer | php \
 
 RUN apk add bash
 
-WORKDIR /app
+WORKDIR /app/examples

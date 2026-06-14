@@ -7,7 +7,7 @@ use PlaystationStoreApi\Enum\CategoryEnum;
 use PlaystationStoreApi\Enum\RegionEnum;
 use PlaystationStoreApi\Request\RequestProductList;
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 const API_URL = 'https://web.np.playstation.com/api/graphql/v1/';
 

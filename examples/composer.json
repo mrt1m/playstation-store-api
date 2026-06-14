@@ -1,0 +1,22 @@
+{
+  "name": "mrt1m/playstation-store-api-examples",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Timur Ishmukhametov",
+      "email": "job.mrt1m@gmail.com"
+    }
+  ],
+  "license": "proprietary",
+  "prefer-stable": true,
+  "require": {
+    "mrt1m/playstation-store-api": "@dev",
+    "guzzlehttp/guzzle": "^7.0"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../"
+    }
+  ]
+}
