@@ -1,4 +1,4 @@
-.PHONY: build get_catalog_ps4 get_catalog_ps5 ps_plus_deluxe ps_plus_extra ps_plus_essential get_product_by_id get_concept_by_id get_concept_by_product_id run_example lint lint-fix
+.PHONY: build get_catalog_ps4 get_catalog_ps5 ps_plus_deluxe ps_plus_extra ps_plus_essential get_product_by_id get_concept_by_id get_concept_by_product_id get_concept_for_game_info get_concept_for_game_title get_concept_for_compatibility_notices concept_retrieve_for_content_rating concept_retrieve_for_media_carousel concept_retrieve_for_accessibility_features concept_retrieve_for_media wca_concept_retrieve_for_legal_text run_example lint lint-fix
 
 build:
 	docker compose build php \
@@ -45,6 +45,30 @@ get_product_star_rating:
 
 get_concept_star_rating:
 	make run_example name=get_concept_star_rating
+
+get_concept_for_game_info:
+	make run_example name=get_concept_for_game_info
+
+get_concept_for_game_title:
+	make run_example name=get_concept_for_game_title
+
+get_concept_for_compatibility_notices:
+	make run_example name=get_concept_for_compatibility_notices
+
+concept_retrieve_for_content_rating:
+	make run_example name=concept_retrieve_for_content_rating
+
+concept_retrieve_for_media_carousel:
+	make run_example name=concept_retrieve_for_media_carousel
+
+concept_retrieve_for_accessibility_features:
+	make run_example name=concept_retrieve_for_accessibility_features
+
+concept_retrieve_for_media:
+	make run_example name=concept_retrieve_for_media
+
+wca_concept_retrieve_for_legal_text:
+	make run_example name=wca_concept_retrieve_for_legal_text
 
 run_example:
 	docker compose run --rm php -f ${name}.php > response/${name}.json
