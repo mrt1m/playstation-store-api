@@ -31,4 +31,6 @@ enum OperationSha256Enum: string
     case conceptRetrieveForCompatibilityNotices = 'fb1a981a21d7a00ba72bd79d3998044d77207687a5aa1d3a17d90d7b7f3acb05';
 
     case conceptRetrieveForContentRating = 'b504e0bc68af3dc08bc56c0001b27da26ed15d70827420f80805b2d031a95aa8';
+
+    case conceptRetrieveForMediaCarousel = '404d96e0672728c19708b6519bcdc1427c5270ce76d9cb009cca39b8e68ace7b';
 }
