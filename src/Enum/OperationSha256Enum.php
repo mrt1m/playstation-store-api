@@ -23,4 +23,6 @@ enum OperationSha256Enum: string
     case wcaProductStarRatingRetrive = 'cedd370c39e89da20efa7b2e55710e88cb6e6843cc2f8203f7e73ba4751e7253';
 
     case wcaConceptStarRatingRetrive = 'e12dc5cef72296a437b4d71e0b130010bf3707ab981b585ba00d1d5773ce2092';
+
+    case conceptRetrieveForGameInfo = '156bf37e6d6091b4d584ebf5f430a65e818b6120525dd82a0745352d21619da6';
 }
