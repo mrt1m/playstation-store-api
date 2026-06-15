@@ -20,6 +20,7 @@ use PlaystationStoreApi\Request\RequestProductStarRating;
 use PlaystationStoreApi\Request\RequestConceptForCompatibilityNotices;
 use PlaystationStoreApi\Request\RequestConceptStarRating;
 use PlaystationStoreApi\Request\RequestConceptRetrieveForContentRating;
+use PlaystationStoreApi\Request\RequestConceptRetrieveForAccessibilityFeatures;
 use PlaystationStoreApi\Request\RequestConceptRetrieveForMediaCarousel;
 
 final class RequestLocatorService
@@ -47,6 +48,7 @@ final class RequestLocatorService
         $locator->set(RequestConceptForCompatibilityNotices::class, OperationSha256Enum::conceptRetrieveForCompatibilityNotices);
         $locator->set(RequestConceptRetrieveForContentRating::class, OperationSha256Enum::conceptRetrieveForContentRating);
         $locator->set(RequestConceptRetrieveForMediaCarousel::class, OperationSha256Enum::conceptRetrieveForMediaCarousel);
+        $locator->set(RequestConceptRetrieveForAccessibilityFeatures::class, OperationSha256Enum::conceptRetrieveForAccessibilityFeatures);
 
         return $locator;
     }
