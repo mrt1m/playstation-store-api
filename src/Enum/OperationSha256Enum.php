@@ -29,4 +29,6 @@ enum OperationSha256Enum: string
     case conceptRetrieveForGameTitle = 'd244286e38044363f1fb6707f719d41558c74542fc421503a38124ca87068812';
 
     case conceptRetrieveForCompatibilityNotices = 'fb1a981a21d7a00ba72bd79d3998044d77207687a5aa1d3a17d90d7b7f3acb05';
+
+    case conceptRetrieveForContentRating = 'b504e0bc68af3dc08bc56c0001b27da26ed15d70827420f80805b2d031a95aa8';
 }
