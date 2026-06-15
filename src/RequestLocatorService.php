@@ -11,6 +11,7 @@ use PlaystationStoreApi\Request\RequestAddOnsByTitleId;
 use PlaystationStoreApi\Request\RequestConceptById;
 use PlaystationStoreApi\Request\RequestConceptByProductId;
 use PlaystationStoreApi\Request\RequestConceptForGameInfo;
+use PlaystationStoreApi\Request\RequestConceptForGameTitle;
 use PlaystationStoreApi\Request\RequestPricingDataByConceptId;
 use PlaystationStoreApi\Request\RequestProductById;
 use PlaystationStoreApi\Request\RequestProductList;
@@ -39,6 +40,7 @@ final class RequestLocatorService
         $locator->set(RequestProductStarRating::class, OperationSha256Enum::wcaProductStarRatingRetrive);
         $locator->set(RequestConceptStarRating::class, OperationSha256Enum::wcaConceptStarRatingRetrive);
         $locator->set(RequestConceptForGameInfo::class, OperationSha256Enum::conceptRetrieveForGameInfo);
+        $locator->set(RequestConceptForGameTitle::class, OperationSha256Enum::conceptRetrieveForGameTitle);
 
         return $locator;
     }
