@@ -1,3 +1,15 @@
+## 2.4.0 - 2026-06-15
+
+Added new methods for retrieve concept information:
+- RequestConceptRetrieveForCompatibilityNotices
+- RequestConceptRetrieveForGameInfo
+- RequestConceptRetrieveForGameTitle
+- RequestConceptRetrieveForContentRating
+- RequestConceptRetrieveForMediaCarousel
+- RequestConceptRetrieveForAccessibilityFeatures
+- RequestConceptRetrieveForMedia
+- RequestWcaConceptRetrieveForLegalText
+
 ## 2.3.0 - 2026-06-14
 
 - Migrated to psr/http-client interfaces for improved interoperability with PSR-compatible HTTP clients.
