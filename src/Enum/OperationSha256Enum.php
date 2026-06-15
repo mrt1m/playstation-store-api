@@ -35,4 +35,6 @@ enum OperationSha256Enum: string
     case conceptRetrieveForMediaCarousel = '404d96e0672728c19708b6519bcdc1427c5270ce76d9cb009cca39b8e68ace7b';
 
     case conceptRetrieveForAccessibilityFeatures = '5ad27cf7d1f053068dabf46cc131518a7b7d686e9d64daa1a500d8faab0444c2';
+
+    case wcaConceptRetrieveForLegalText = 'b4c35dd0b4ec1541041699ac77e0f607d510d9b2b1e4ad9d2e743e1727f5aeb8';
 }
